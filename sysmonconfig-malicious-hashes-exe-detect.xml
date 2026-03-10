@@ -1557,6 +1557,13 @@
 			<Image condition="image">mspaint.exe</Image>
 		</FileBlockExecutable>
 	</RuleGroup>
+
+	<RuleGroup name="" groupRelation="and"> <!-- Exclusion for Visio Add-in EDS SystemDraw -->
+		<FileBlockExecutable onmatch="exclude">
+			<Image condition="image">visio.EXE</Image>
+			<TargetFilename condition="contains any">SystemDraw.Addin.DLL</TargetFilename>
+		</FileBlockExecutable>
+	</RuleGroup>
 		
 	<!--SYSMON EVENT ID 28 : FILE BLOCK SHREDDING [FileBlockShredding]-->
 		<!--EVENT 28: "File Block Shredding"-->
